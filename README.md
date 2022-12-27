@@ -4,14 +4,15 @@
 How to use this project:
 
 - First of all, requirements:<br/>
-    """<br/>
-    pip install pytube<br/>
-    pip install pyqrcode<br/>
-    python -m pip install git+https://gitlab.com/drj11/pypng@pypng-0.20220715.0<br/>
-    pip install re<br/>
-    pip install Pillow<br/>
-    pip install pytest<br/>
-    """<br/>
+
+	    """
+	    pip install pytube
+	    pip install pyqrcode
+	    python -m pip install git+https://gitlab.com/drj11/pypng@pypng-0.20220715.0
+	    pip install re
+	    pip install Pillow
+	    pip install pytest
+	    """
 
 - Next, run it with 'python project.py' or 'python3 project.py' :<br/>
     - Then, there are four amenities here in my project. They are:<br/>
