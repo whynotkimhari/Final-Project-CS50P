@@ -3,60 +3,64 @@
 #### Description:
 How to use this project:
 
-- First of all, requirements:
-    """
-    pip install pytube
-    pip install pyqrcode
-    python -m pip install git+https://gitlab.com/drj11/pypng@pypng-0.20220715.0
-    pip install re
-    pip install Pillow
-    pip install pytest
-    """
+- First of all, requirements:<br/>
+    """<br/>
+    pip install pytube<br/>
+    pip install pyqrcode<br/>
+    python -m pip install git+https://gitlab.com/drj11/pypng@pypng-0.20220715.0<br/>
+    pip install re<br/>
+    pip install Pillow<br/>
+    pip install pytest<br/>
+    """<br/>
 
-- Next, run it with 'python project.py' or 'python3 project.py' :
-    +Then, there are four amenities here in my project. They are:
-                                                                +) creating random password
-                                                                +) getting the audio in the video from Youtube
-                                                                +) creating the qr code for a link
-                                                                +) making a pdf file by using png files
+- Next, run it with 'python project.py' or 'python3 project.py' :<br/>
+    - Then, there are four amenities here in my project. They are:<br/>
+                                                                - creating random password<br/>
+                                                                - getting the audio in the video from Youtube<br/>
+                                                                - creating the qr code for a link<br/>
+                                                                - making a pdf file by using png files<br/>
 
-- Let's dive to each of them:
+- Let's dive to each of them:<br/>
     <+> Checking to stop program <+>
-    """
-    while True:
-        try:
-            method = input("Please input method: ")
-            methods = ["getpass", "getmp4", "getqr", "getpdf"]
-            ...
-            ...
-        except EOFError:
-            print()
-            print("Thanks for using! ")
-            break
-    """
+    
+        """
+        while True:
+            try:
+                method = input("Please input method: ")
+                methods = ["getpass", "getmp4", "getqr", "getpdf"]
+                ...
+                ...
+            except EOFError:
+                print()
+                print("Thanks for using! ")
+                break
+        """
 
-    These line of codes will catching when you want to stop the program using ctrl D (raising EOFError)
+    These line of codes will catching when you want to stop the program using ctrl D (raising EOFError)<br/>
+
+
 
     <+> Checking valid input <+>
 
-    """
-    while True:
-        try:
-            method = input("Please input method: ")
-            methods = ["getpass", "getmp4", "getqr", "getpdf"]
+        """
+        while True:
             try:
-                if method not in methods:
-                    raise NameError
-            ...
-            ...
-            except NameError:
-                print("Method does not exist!")
-    """
+                method = input("Please input method: ")
+                methods = ["getpass", "getmp4", "getqr", "getpdf"]
+                try:
+                    if method not in methods:
+                        raise NameError
+                ...
+                ...
+                except NameError:
+                    print("Method does not exist!")
+        """
 
     These line of codes will catching when you use the non-existed method (key). But it will not stop the program. It will let you re-input.
 
-    <+> Creating random password <+>
-        I will 'import string' and 'import random' to use this function, the codes are
+    <+> Creating random password <+><br/>
+        I will 'import string' and 'import random' to use this function, the codes are<br/>
+		
             """
             def Create_Random_Password(your_pass):
             size = len(your_pass)
@@ -69,11 +73,7 @@ How to use this project:
             big_string = lower_case+upper_case+digits+symbols
             ran_pass= random.sample(big_string, size)
             return ''.join(ran_pass)
-            """
-
-            and
-
-            """
+            
             if method == "getpass":
                 try:
                     your_pass = input("Password: ")
@@ -83,10 +83,10 @@ How to use this project:
                     print("You did not type any password!")
             """
 
-            to catch exception.
+			to catch exception.
 
-    <+> Getting the audio in the video from Youtube <+>
-        I will 'import pytube' and 'from pytube.exceptions import RegexMatchError' to use this function, the codes are
+    <+> Getting the audio in the video from Youtube <+><br/>
+        I will 'import pytube' and 'from pytube.exceptions import RegexMatchError' to use this function, the codes are<br/>
 
             """
             def MP3_from_MP4_Youtube(video_url):
@@ -109,8 +109,9 @@ How to use this project:
 
             to catch exception.
 
-    <+> Creating the qr code for a link <+>
-        I will 'import re', 'import pyqrcode', 'import png', and 'from pyqrcode import QRCode' to use this function, the codes are
+    <+> Creating the qr code for a link <+><br/>
+        I will 'import re', 'import pyqrcode', 'import png', and 'from pyqrcode import QRCode' to use this function, the codes are<br/>
+		
             """
             def Create_QRCode_for_link(link, name_of_qr):
             if len(name_of_qr) == 0:
@@ -138,8 +139,9 @@ How to use this project:
 
             to catch exception.
 
-    <+> Making a pdf file by using png files <+>
-        I will 'from PIL import Image' to use this function, the codes are
+    <+> Making a pdf file by using png files <+><br/>
+        I will 'from PIL import Image' to use this function, the codes are<br/>
+		
             """
             def PNG_to_PDF(amount):
             if amount == 0:
@@ -171,11 +173,11 @@ How to use this project:
             to catch exceptions.
 
 
-- The next one is test_project.py:
-    I will 'import pytest'
-    and 'from project import Create_Random_Password, MP3_from_MP4_Youtube, Create_QRCode_for_link, PNG_to_PDF'
-    and 'from pytube.exceptions import RegexMatchError'
-    to use this file, the codes are:
+- The next one is test_project.py:<br/>
+    I will 'import pytest'<br/>
+    and 'from project import Create_Random_Password, MP3_from_MP4_Youtube, Create_QRCode_for_link, PNG_to_PDF'<br/>
+    and 'from pytube.exceptions import RegexMatchError'<br/>
+    to use this file, the codes are:<br/>
 
         In main function:
             """
